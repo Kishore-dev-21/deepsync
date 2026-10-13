@@ -51,56 +51,6 @@ Location -> 3D Ocean State -> Depth Slicing -> Temporal Playback -> In-Situ Obse
 
 ---
 
-## Visual Interface & Platform Modules
-
-<details open>
-<summary><strong>Home -- Live System Dashboard & Overview</strong></summary>
-<br/>
-<p align="center">
-  <img src="Frontend-stitch-new/stitch_responsive_authentication_form_suite/deepsync_home_3d_ocean_data_visualization_platform/screen.png" alt="DEEPSYNC Home Page" width="920"/>
-</p>
-<p align="center"><em>Interactive overview featuring live telemetry metrics, connected data sources (INCOIS, CMEMS, Argo Global, Glider), and recent ingestion activity.</em></p>
-</details>
-
-<details open>
-<summary><strong>Dashboard -- 3D Volumetric Engine & 2D Oceanographic Diagnostics</strong></summary>
-<br/>
-<p align="center">
-  <img src="Frontend-stitch-new/stitch_responsive_authentication_form_suite/deepsync_dashboard_3d_ocean_data_visualization_platform/screen.png" alt="DEEPSYNC 3D Dashboard" width="920"/>
-</p>
-<p align="center"><em>Interactive 3D WebGL volumetric scene with isosurface extraction, horizontal depth slicers, vertical exaggeration slider, Argo float marker overlays, and 8 integrated 2D analytical charts.</em></p>
-</details>
-
-<details open>
-<summary><strong>GeoMap -- In-Situ Ocean Instrument Tracking</strong></summary>
-<br/>
-<p align="center">
-  <img src="Frontend-stitch-new/stitch_responsive_authentication_form_suite/deepsync_geo_map_in_situ_ocean_tracking/screen.png" alt="DEEPSYNC Geo Map" width="920"/>
-</p>
-<p align="center"><em>Real-time geospatial tracking of Argo floats, gliders, CTD moorings, and BGC bio-sensors over GEBCO bathymetry, with complete trajectory inspection and sounding profiles.</em></p>
-</details>
-
-<details open>
-<summary><strong>OceanIQ -- AI Natural Language Query Assistant</strong></summary>
-<br/>
-<p align="center">
-  <img src="Frontend-stitch-new/stitch_responsive_authentication_form_suite/deepsync_ai_assistant_oceanographic_query_intelligence/screen.png" alt="DEEPSYNC OceanIQ AI Assistant" width="920"/>
-</p>
-<p align="center"><em>Natural-language oceanographic assistant converting plain-English scientific inquiries into structured read-only queries with embedded diagnostic charts and CF-compliant metadata.</em></p>
-</details>
-
-<details>
-<summary><strong>Data Manager & Administrative Ingestion Suite</strong></summary>
-<br/>
-<p align="center">
-  <img src="Frontend-stitch-new/stitch_responsive_authentication_form_suite/deepsync_data_manager_ingestion_admin_platform/screen.png" alt="DEEPSYNC Data Manager" width="460"/>
-  <img src="Frontend-stitch-new/stitch_responsive_authentication_form_suite/deepsync_dedicated_sign_in_platform/screen.png" alt="DEEPSYNC Sign In" width="460"/>
-</p>
-<p align="center"><em>Administrative dataset upload portal with automatic CF validation, parser registry, and secure JWT-based authentication.</em></p>
-</details>
-
----
-
 ## System Architecture
 
 The DEEPSYNC platform is structured into six decoupled layers designed for resilience, scientific accuracy, and low-latency client rendering:
