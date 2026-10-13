@@ -1,12 +1,12 @@
 <p align="center">
-  <img src="Frontend-stitch-new/logo.png" alt="DeepSync Logo" width="140"/>
+  <img src="assets/bluegen_606_logo.png" alt="BLUEGEN_606 Logo" width="360"/>
 </p>
 
-<h1 align="center">🌊 DEEPSYNC</h1>
+<h1 align="center">DEEPSYNC</h1>
 <h3 align="center">3D Ocean Data Visualization & Intelligence Platform</h3>
 
 <p align="center">
-  <em>Synchronizing depth, location, time & data sources for ocean science</em>
+  <em>Synchronizing depth, location, time, and observational data sources for ocean science</em>
 </p>
 
 <p align="center">
@@ -21,381 +21,401 @@
 </p>
 
 <p align="center">
-  <strong>Team BLUEGEN_606</strong> · SEVA First Innovation Challenge 2026 · PS 26067 · INCOIS, MoES Govt. of India
+  <strong>Team BLUEGEN_606</strong> | SEVA First Innovation Challenge 2026 | Theme: Swachh & Sustainable Bharat<br/>
+  Problem Statement: PS 26067 | INCOIS, Ministry of Earth Sciences, Government of India
 </p>
 
 ---
 
-## 📖 About
+## Executive Summary
 
-**DEEPSYNC** is a unified, browser-native platform that integrates heterogeneous oceanographic datasets — numerical model outputs (INCOIS-MOM4, Copernicus Marine) and in-situ observations (Argo floats, autonomous gliders, CTD moorings) — into one interactive **3D volumetric visualization** environment with **depth-resolved exploration**, **AI-powered natural language queries**, and **real-time hazard monitoring**.
+DEEPSYNC is a modular, browser-based Ocean Data Visualization and Intelligence Platform developed by Team BLUEGEN_606 for the SEVA First Innovation Challenge 2026 under the Swachh & Sustainable Bharat theme. It unifies numerical ocean model outputs (INCOIS-MOM4, Copernicus Marine) with in-situ observational datasets (Argo profiling floats, autonomous underwater gliders, CTD casts, and biogeochemical sensors) within a high-performance 3D WebGL environment.
 
-> India's coastline and Exclusive Economic Zone support livelihoods, fisheries, and coastal communities. DEEPSYNC turns complex ocean-state information into actionable scientific insight — supporting the **Swachh & Sustainable Bharat** initiative through evidence-based environmental monitoring.
+By combining depth-resolved volumetric rendering, multi-parameter spatial queries, CF-1.8 standardized ingestion, an AI query engine (OceanIQ), and operational hazard monitoring into one platform, DEEPSYNC bridges the gap between raw multidimensional scientific data and actionable ocean intelligence.
 
-### 🔑 The Problem
+### The Core Problem
 
-Researchers currently juggle fragmented desktop applications, flat 2D maps, and separate observational datasets — making it nearly impossible to correlate model predictions with real measurements at the same location and depth. **No browser-native 3D environment** renders model fields and in-situ observations together.
+Researchers and operational forecasters currently navigate fragmented desktop applications, static 2D planar maps, and decoupled observational archives. This fragmentation impedes:
+- Cross-validation of numerical model forecasts against physical in-situ measurements at identical spatio-temporal coordinates.
+- Depth-resolved inspection across the entire water column (surface to -6000 m).
+- Interactive navigation through dynamic time steps and volumetric isopycnal layers.
+- Real-time synthesis of coastal hazards, biogeochemical indicators, and marine ecosystem parameters.
 
-### ✅ The Solution
+### The DEEPSYNC Solution
 
-DEEPSYNC provides a **single geographic, vertical, and temporal context** where a user starts from a simple coordinate and progressively investigates the full multidimensional ocean state — from surface to benthic, across time, with models and observations side by side.
-
----
-
-## 🖼️ Screenshots
-
-<details>
-<summary><strong>🏠 Home — Live System Dashboard</strong></summary>
-<br/>
-<p align="center">
-  <img src="Frontend-stitch-new/stitch_responsive_authentication_form_suite/deepsync_home_3d_ocean_data_visualization_platform/screen.png" alt="Home Page" width="900"/>
-</p>
-<p align="center"><em>Live rotating 3D preview, real-time system metrics (142 Argo floats, 18 gliders, 340K+ km² coverage), connected data sources & recent activity feed</em></p>
-</details>
-
-<details>
-<summary><strong>📊 Dashboard — 3D Volumetric Engine + 2D Analytics</strong></summary>
-<br/>
-<p align="center">
-  <img src="Frontend-stitch-new/stitch_responsive_authentication_form_suite/deepsync_dashboard_3d_ocean_data_visualization_platform/screen.png" alt="Dashboard" width="900"/>
-</p>
-<p align="center"><em>Interactive WebGL 3D ocean scene with isosurfaces, volumetric rendering, depth slicing, Argo float overlays, and 8 analytical chart types (depth profile, T-S diagram, Hovmöller, current rose, correlation analysis & more)</em></p>
-</details>
-
-<details>
-<summary><strong>🗺️ Geo Map — In-Situ Instrument Tracking</strong></summary>
-<br/>
-<p align="center">
-  <img src="Frontend-stitch-new/stitch_responsive_authentication_form_suite/deepsync_geo_map_in_situ_ocean_tracking/screen.png" alt="Geo Map" width="900"/>
-</p>
-<p align="center"><em>Real-time Leaflet map with Argo floats, gliders, CTD moorings & BGC bio-sensors. Instrument detail panel with live telemetry — surface temp, salinity, max dive depth, drift velocity & vertical depth profiles</em></p>
-</details>
-
-<details>
-<summary><strong>🤖 AI Assistant — OceanIQ Natural Language Queries</strong></summary>
-<br/>
-<p align="center">
-  <img src="Frontend-stitch-new/stitch_responsive_authentication_form_suite/deepsync_ai_assistant_oceanographic_query_intelligence/screen.png" alt="AI Assistant" width="900"/>
-</p>
-<p align="center"><em>Ask questions in plain English — "What's the temperature trend for ARGO_2900004 over the last 7 days?" — and get scientifically grounded answers with live charts, CF-1.8 quality metadata & one-click 3D dashboard links</em></p>
-</details>
-
-<details>
-<summary><strong>📦 Data Manager & 🔐 Authentication</strong></summary>
-<br/>
-<p align="center">
-  <img src="Frontend-stitch-new/stitch_responsive_authentication_form_suite/deepsync_data_manager_ingestion_admin_platform/screen.png" alt="Data Manager" width="440"/>
-  <img src="Frontend-stitch-new/stitch_responsive_authentication_form_suite/deepsync_dedicated_sign_in_platform/screen.png" alt="Sign In" width="440"/>
-</p>
-<p align="center"><em>Admin data ingestion panel (NetCDF/CSV upload, parser registry, ingestion logs) and secure authentication</em></p>
-</details>
-
----
-
-## 🏗️ System Architecture
+DEEPSYNC acts as an integration and intelligent visualization layer connecting numerical representations of the ocean with observational evidence in a single browser-native interface:
 
 ```
-┌─────────────────────────────────────────────────────────────────────┐
-│                    LAYER 1: USER INTERFACE                         │
-│  React 19 + Vite 8 │ Three.js/R3F │ Chart.js │ Leaflet │ Tailwind │
-├─────────────────────────────────────────────────────────────────────┤
-│              LAYER 2: APPLICATION & BACKEND SERVICES               │
-│        Spring Boot 4.1 │ REST API │ JWT Auth │ Spring Security     │
-├─────────────────────────────────────────────────────────────────────┤
-│            LAYER 3: DATA PROCESSING & COMMUNICATION                │
-│    NetCDF-Java/CDM │ Apache CSV │ CF-1.8 Validation │ OGC/OPeNDAP │
-├─────────────────────────────────────────────────────────────────────┤
-│                    LAYER 4: DATA SOURCES                           │
-│  INCOIS-MOM4 │ Copernicus Marine │ Argo Global │ Glider (ifremer)  │
-├─────────────────────────────────────────────────────────────────────┤
-│              LAYER 5: UNIFIED DATA & STORAGE                       │
-│     PostgreSQL 16 │ Hibernate/JPA │ Flyway Migrations │ Docker     │
-├─────────────────────────────────────────────────────────────────────┤
-│            LAYER 6: OUTPUTS & DECISION SUPPORT                     │
-│  3D Viz │ Depth Profiles │ Model-vs-Obs │ Hazard Alerts │ Reports  │
-└─────────────────────────────────────────────────────────────────────┘
+Location -> 3D Ocean State -> Depth Slicing -> Temporal Playback -> In-Situ Observation -> Natural Language Query -> Actionable Insight
 ```
 
 ---
 
-## ✨ Key Features
+## Visual Interface & Platform Modules
 
-### 🌐 3D Volumetric Visualization Engine
-- **Isosurface rendering** — extract surfaces of constant temperature, salinity, or chlorophyll
-- **Volumetric shading** — full 3D opacity-mapped ocean data fields with adjustable transparency
-- **Depth slicing** — horizontal cutting planes from surface (0m) to benthic (-4500m)
-- **Vertical exaggeration** — adjustable up to 10× for resolving thin ocean layers
-- **Time animation** — step through model time steps with playback controls
-- **Colorbar customization** — auto min/max scaling with scientific colormaps
-- **Argo & Glider overlays** — clickable instrument points with live trajectory rendering
+<details open>
+<summary><strong>Home -- Live System Dashboard & Overview</strong></summary>
+<br/>
+<p align="center">
+  <img src="Frontend-stitch-new/stitch_responsive_authentication_form_suite/deepsync_home_3d_ocean_data_visualization_platform/screen.png" alt="DEEPSYNC Home Page" width="920"/>
+</p>
+<p align="center"><em>Interactive overview featuring live telemetry metrics, connected data sources (INCOIS, CMEMS, Argo Global, Glider), and recent ingestion activity.</em></p>
+</details>
 
-### 📈 2D Oceanographic Diagnostics (8 Chart Types)
-| Chart Type | Description |
+<details open>
+<summary><strong>Dashboard -- 3D Volumetric Engine & 2D Oceanographic Diagnostics</strong></summary>
+<br/>
+<p align="center">
+  <img src="Frontend-stitch-new/stitch_responsive_authentication_form_suite/deepsync_dashboard_3d_ocean_data_visualization_platform/screen.png" alt="DEEPSYNC 3D Dashboard" width="920"/>
+</p>
+<p align="center"><em>Interactive 3D WebGL volumetric scene with isosurface extraction, horizontal depth slicers, vertical exaggeration slider, Argo float marker overlays, and 8 integrated 2D analytical charts.</em></p>
+</details>
+
+<details open>
+<summary><strong>GeoMap -- In-Situ Ocean Instrument Tracking</strong></summary>
+<br/>
+<p align="center">
+  <img src="Frontend-stitch-new/stitch_responsive_authentication_form_suite/deepsync_geo_map_in_situ_ocean_tracking/screen.png" alt="DEEPSYNC Geo Map" width="920"/>
+</p>
+<p align="center"><em>Real-time geospatial tracking of Argo floats, gliders, CTD moorings, and BGC bio-sensors over GEBCO bathymetry, with complete trajectory inspection and sounding profiles.</em></p>
+</details>
+
+<details open>
+<summary><strong>OceanIQ -- AI Natural Language Query Assistant</strong></summary>
+<br/>
+<p align="center">
+  <img src="Frontend-stitch-new/stitch_responsive_authentication_form_suite/deepsync_ai_assistant_oceanographic_query_intelligence/screen.png" alt="DEEPSYNC OceanIQ AI Assistant" width="920"/>
+</p>
+<p align="center"><em>Natural-language oceanographic assistant converting plain-English scientific inquiries into structured read-only queries with embedded diagnostic charts and CF-compliant metadata.</em></p>
+</details>
+
+<details>
+<summary><strong>Data Manager & Administrative Ingestion Suite</strong></summary>
+<br/>
+<p align="center">
+  <img src="Frontend-stitch-new/stitch_responsive_authentication_form_suite/deepsync_data_manager_ingestion_admin_platform/screen.png" alt="DEEPSYNC Data Manager" width="460"/>
+  <img src="Frontend-stitch-new/stitch_responsive_authentication_form_suite/deepsync_dedicated_sign_in_platform/screen.png" alt="DEEPSYNC Sign In" width="460"/>
+</p>
+<p align="center"><em>Administrative dataset upload portal with automatic CF validation, parser registry, and secure JWT-based authentication.</em></p>
+</details>
+
+---
+
+## System Architecture
+
+The DEEPSYNC platform is structured into six decoupled layers designed for resilience, scientific accuracy, and low-latency client rendering:
+
+```
++-------------------------------------------------------------------------+
+|                       LAYER 1: USER INTERFACE                           |
+|   React 19 + Vite 8 | Three.js / React Three Fiber | Leaflet | Chart.js  |
+|   Researcher Portal | 3D Ocean Explorer | OceanIQ Chat | Data Workspace |
++-------------------------------------------------------------------------+
+                                     |
++-------------------------------------------------------------------------+
+|                LAYER 2: APPLICATION & BACKEND SERVICES                  |
+|   Spring Boot 4.1 | Spring Security (JWT) | REST API Gateway            |
+|   Marine Ingestion Service | Metadata & Catalogue | OceanIQ Query Agent |
+|   Visualization Data Service | Comparative Analysis | Hazard Advisory   |
++-------------------------------------------------------------------------+
+                                     |
++-------------------------------------------------------------------------+
+|               LAYER 3: DATA PROCESSING & INTEROPERABILITY               |
+|   Unidata NetCDF-Java (cdm-core) | Apache Commons CSV | PostGIS Filters |
+|   Coordinate & Time Normalization | CF-1.8 Validation | OGC WMS/WCS     |
++-------------------------------------------------------------------------+
+                                     |
++-------------------------------------------------------------------------+
+|                         LAYER 4: DATA SOURCES                           |
+|   Numerical Ocean Models (INCOIS-MOM4, IGORA, CMEMS)                    |
+|   Observational Systems: Argo Core, BGC-Argo, Underwater Gliders, CTD   |
+|   Environmental & Coastal Hazard Advisories (High Wave, SARAT)          |
++-------------------------------------------------------------------------+
+                                     |
++-------------------------------------------------------------------------+
+|                     LAYER 5: UNIFIED STORAGE LAYER                      |
+|   PostgreSQL 16 (Relational Metadata & Grid Coordinates)                |
+|   Flyway Database Migrations | NetCDF Repository | Structured Indices   |
++-------------------------------------------------------------------------+
+                                     |
++-------------------------------------------------------------------------+
+|                   LAYER 6: OUTPUTS & DECISION SUPPORT                   |
+|   Interactive 3D Volumes | Multi-depth Stratification Profiles          |
+|   Model-vs-Observation Skill Assessment | Coastal Hazard Intelligence   |
++-------------------------------------------------------------------------+
+```
+
+---
+
+## Core Capabilities
+
+### 1. Interactive 3D Visualization Engine
+- **Volumetric Rendering**: Direct GPU-accelerated rendering of scalar and vector fields (temperature, salinity, chlorophyll, velocity vectors u/v).
+- **Depth-Slice Navigation**: Spatial slicers allowing granular horizontal cutting planes from sea surface (0 m) to abyssal depths (-6000 m).
+- **Isosurface Extraction**: Real-time thresholding to isolate thermoclines, haloclines, and pycnoclines.
+- **Vertical Exaggeration**: Dynamically adjustable scaling (1.0x to 10.0x) to resolve thin stratified layers across vast horizontal domains.
+- **Scientific Colorbars**: Colormap presets including Turbo, Viridis, Thermal, and Haline with automatic min/max range calibration.
+- **4D Temporal Animation**: Interactive playback across temporal timesteps.
+
+### 2. Quantitative 2D Oceanographic Diagnostics
+Alongside 3D volumetric views, DEEPSYNC renders 8 synchronized oceanographic chart formats:
+
+| Diagnostic Tool | Scientific Purpose |
 |:---|:---|
-| **Depth Profile** | Multi-series line chart (temp, salinity, current, chlorophyll) with MLD reference |
-| **T-S Diagram** | Salinity vs temperature with depth-colored isopycnal contours |
-| **Hovmöller** | Depth × time matrix with color intensity |
-| **Current Rose** | Polar velocity plot for direction + magnitude |
-| **Correlation** | Scatter with linear fit, Pearson r and p-value |
-| **Distribution** | Histogram of variable values at selected depth |
-| **Time Series** | Temporal evolution of selected variables |
-| **Along-Track** | Glider trajectory data plotted along distance |
+| **Depth Profile** | Stratification curves displaying thermocline, halocline, and automated Mixed Layer Depth (MLD) reference lines. |
+| **T-S Diagram** | Temperature versus salinity scatter plots with isopycnal potential density contours for water-mass identification. |
+| **Hovmoller Diagram** | Spatio-temporal depth-versus-time matrix tracking seasonal subsurface evolution. |
+| **Current Rose** | Polar velocity diagrams indicating directional frequency and current magnitude. |
+| **Correlation Analysis** | Multi-variable regressions (e.g., SST vs Chlorophyll-a, MLD vs SST) with Pearson correlation coefficient and p-values. |
+| **Frequency Distribution** | Value histograms across specified depth slices. |
+| **Time Series** | Multi-depth temporal trends and anomaly tracking over selected time windows. |
+| **Along-Track Transect** | Vertical section interpolations along moving glider trajectories or ship cruises. |
 
-### 🗺️ Geospatial Map (Leaflet)
-- Real-time Argo float & glider tracking with WMO platform IDs
-- Instrument detail panel: surface temp, salinity, max dive depth, drift velocity, battery state
-- Filterable by instrument category, observation window & profile depth scope
-- GEBCO bathymetry overlay, EPSG:3857 Mercator projection
-- Cursor coordinate & depth readout
+### 3. In-Situ Instrument Integration & Model Validation
+- **Argo Profiling Floats**: Display active WMO floats, dive cycle counts, battery status, transmission timestamps, and recorded depth profiles.
+- **Autonomous Gliders**: Track underwater dive trajectories and multi-sensor payloads (PAR, dissolved oxygen, backscatter, chlorophyll).
+- **Model vs Observation Assessment**: Spatial co-location of numerical forecast grids and observational soundings, calculating local deviations, RMSE, and bias across forecast horizons.
 
-### 🤖 OceanIQ — AI Natural Language Query Engine
-- Ask questions in plain English: *"What is the salinity at 500m depth?"*
-- AI intent classification → structured scientific query → validated execution
-- Grounded in platform data — calculates MLD, identifies water masses, reports hazards
-- Results as live charts + 3D scene snapshots with CF-1.8 quality metadata
-- Suggested follow-up prompts for exploration
+### 4. OceanIQ: Grounded AI Natural Language Query Agent
+- Natural-language interface powered by scientific intent classification.
+- Converts plain-English queries into validated, read-only analytical queries against PostgreSQL and NetCDF stores.
+- Grounded in active platform records -- calculates Mixed Layer Depth (MLD), queries coastal hazard advisories, and generates live inline charts.
+- Example inquiries supported:
+  - *"What is the temperature trend for ARGO_2900004 over the last 7 days?"*
+  - *"Show the salinity variation with depth near 12.4 N, 79.1 E."*
+  - *"Are there any active high wave alerts along the Tamil Nadu coast?"*
 
-### 🛡️ Hazard Monitoring & Environmental Intelligence
-- Coastal hazard advisories (high wave alerts, storm surge)
-- Water quality indicators and biodiversity context
-- Environmental monitoring supporting Swachh & Sustainable Bharat
-- Region-based hazard information with scientific context
-
-### 🔌 Extensible Data Ingestion
-- **NetCDF parser** — Unidata NetCDF-Java/CDM (cdm-core 5.5.3) for NetCDF-3/4 files
-- **ASCII/CSV parser** — Apache Commons CSV for delimited text observations
-- **CF-1.8 validation** — metadata standardization ensuring source-independent interoperability
-- **Plugin-style architecture** — add new formats without rebuilding the application
-- **Profile auto-linking** — soundings automatically linked to platform IDs & spatial indexes
+### 5. Extensible Ingestion & CF Standards Pipeline
+- **NetCDF Ingestion Engine**: Built with Unidata NetCDF-Java/CDM (`cdm-core` 5.5.3) supporting NetCDF-3, NetCDF-4, and HDF5 conventions.
+- **Delimited ASCII/CSV Parser**: Stream-based parsing via Apache Commons CSV with automated column mapping.
+- **CF-1.8 Metadata Validation**: Automated verification of standard variable naming, dimensional consistency (`time`, `depth`/`level`, `latitude`, `longitude`), and coordinate reference systems.
+- **Pluggable Architecture**: Implement the `OceanDataParser` interface to support new instrument telemetry formats without altering existing core logic.
 
 ---
 
-## 🛠️ Tech Stack
+## Technology Stack
 
-| Layer | Technology | Version |
+| Domain | Technology | Version | Purpose |
+|:---|:---|:---|:---|
+| **Frontend Framework** | React | 19.2 | Component-driven user interface |
+| **Build Tool** | Vite | 8.2 | Fast module bundling and development server |
+| **3D Graphics** | Three.js / React Three Fiber / Drei | 0.185 / 9.7 / 10.7 | WebGL GPU-accelerated volumetric rendering |
+| **Geospatial Mapping** | Leaflet / React-Leaflet | 1.9 / 4.2 | Interactive 2D maps and instrument tracking |
+| **Data Visualization** | Chart.js / react-chartjs-2 | 4.5 / 5.3 | 2D oceanographic diagnostic charts |
+| **State Management** | Zustand | 5.0 | Reactive global application state |
+| **Styling** | Tailwind CSS | 3.4 | Responsive scientific interface design |
+| **Backend Framework** | Spring Boot | 4.1 | Robust REST microservices architecture |
+| **Language Runtime** | Java (OpenJDK) | 17 LTS | High-performance backend execution |
+| **Persistence** | Spring Data JPA / Hibernate | 6.x | Object-relational mapping |
+| **Relational Database** | PostgreSQL | 16 | Spatial coordinate and metadata storage |
+| **Scientific Data Engine** | Unidata NetCDF-Java (`cdm-core`) | 5.5.3 | Direct NetCDF dimensional parsing |
+| **Tabular Parser** | Apache Commons CSV | 1.10 | High-throughput ASCII profile ingestion |
+| **Security & Auth** | Spring Security / BCrypt / JWT | Standard | Role-based access control and token authentication |
+| **Containerization** | Docker / Docker Compose | 24+ | Multi-container environment orchestration |
+
+---
+
+## REST API Reference
+
+The backend provides a comprehensive suite of REST endpoints:
+
+### Ocean Grid & Volumetric Telemetry
+| HTTP Method | Endpoint | Description |
 |:---|:---|:---|
-| **Frontend** | React, Vite, Tailwind CSS | 19, 8, 3.4 |
-| **3D Engine** | Three.js, React Three Fiber, Drei | 0.185, 9.7, 10.7 |
-| **Charts** | Chart.js, react-chartjs-2 | 4.5, 5.3 |
-| **Maps** | Leaflet, React-Leaflet | 1.9, 4.2 |
-| **State** | Zustand | 5.0 |
-| **HTTP** | Axios | 1.20 |
-| **Backend** | Spring Boot, Java | 4.1, 17 |
-| **ORM** | Hibernate/JPA | via Spring Boot |
-| **Database** | PostgreSQL | 16 |
-| **Migrations** | Flyway | via Spring Boot |
-| **NetCDF** | Unidata cdm-core | 5.5.3 |
-| **CSV** | Apache Commons CSV | 1.10 |
-| **Security** | Spring Security Crypto, JWT | via Spring Boot |
-| **Testing** | JUnit 5, Testcontainers | via Spring Boot |
-| **Containerization** | Docker Compose | Latest |
+| `GET` | `/api/ocean/grid` | Query 3D grid points filtered by bounding box, depth slice, and timestamp |
+| `GET` | `/api/ocean/profile` | Extract vertical depth profile at specified latitude and longitude |
+| `GET` | `/api/ocean/variables` | List available scientific variables (temperature, salinity, currents, etc.) |
+| `GET` | `/api/ocean/time-range` | Fetch available temporal bounding dates and distinct timesteps |
+| `POST` | `/api/ocean/upload` | Upload NetCDF (`.nc`) or CSV files (supports uploads up to 200 MB) |
+
+### In-Situ Platform Telemetry (Argo & Gliders)
+| HTTP Method | Endpoint | Description |
+|:---|:---|:---|
+| `GET` | `/api/argo/floats` | List active instruments, platforms, and latest GPS coordinates |
+| `GET` | `/api/argo/floats/{id}` | Detailed float metadata and trajectory history |
+| `GET` | `/api/argo/floats/{id}/profiles` | Sounding samples with temperature, salinity, and pressure metrics |
+
+### Environmental Intelligence & Hazards
+| HTTP Method | Endpoint | Description |
+|:---|:---|:---|
+| `GET` | `/api/hazards` | Retrieve active operational hazard advisories (high wave, storm surge) |
+| `POST` | `/api/hazards` | Publish a new coastal hazard advisory (admin role required) |
+| `GET` | `/api/stats/summary` | Global dataset metrics, platform counts, and variable summaries |
+
+### Ingestion & System Administration
+| HTTP Method | Endpoint | Description |
+|:---|:---|:---|
+| `POST` | `/api/auth/login` | Authenticate user credentials and return JWT bearer token |
+| `POST` | `/api/auth/register` | Register a new researcher or analyst account |
+| `GET` | `/api/admin/parsers` | Inspect registered dataset parsers and supported file extensions |
+| `GET` | `/api/datasets` | List ingested NetCDF datasets with CF validation logs |
+| `GET` | `/api/health` | Service health status check |
 
 ---
 
-## 🚀 Getting Started
+## Project Structure
+
+```
+deepsync/
+|-- assets/
+|   `-- bluegen_606_logo.png           # Team BLUEGEN_606 primary emblem
+|-- frontend/                          # Client-side React 19 application
+|   |-- src/
+|   |   |-- components/
+|   |   |   |-- dashboard2d/           # Diagnostic charts (Profile, T-S, Hovmoller, etc.)
+|   |   |   |-- dashboard3d/           # WebGL engine (OceanScene, DepthSlider, Slicers)
+|   |   |   |-- datamanager/           # Dataset upload, CF validator, Ingestion logs
+|   |   |   |-- geomap/                # Leaflet map, float trajectories, telemetry panel
+|   |   |   |-- home/                  # Landing page and navigation
+|   |   |   `-- shared/                # Layout shell, protected route guards
+|   |   |-- store/                     # Zustand stores (useAppStore, useAuthStore)
+|   |   |-- views/                     # Route pages (Dashboard, GeoMap, AiAssistant, etc.)
+|   |   `-- utils/                     # Color maps and volumetric shader helpers
+|   |-- package.json
+|   `-- vite.config.js
+|
+|-- src/main/java/com/bluegen/deepsyncapp/
+|   |-- DeepsyncAppApplication.java    # Spring Boot entry point (forced UTC timezone)
+|   |-- config/                        # Database initializers and data seeders
+|   |-- controller/                    # REST API Controllers
+|   |-- dto/                           # Data Transfer Objects
+|   |-- entity/                        # Hibernate / JPA Database Entities
+|   |-- ingestion/                     # Ingestion pipeline and CF-1.8 validators
+|   |-- model/                         # Domain models, filter specs, and DTOs
+|   |-- netcdf/                        # Unidata CDM reader services
+|   |-- repository/                    # Spring Data JPA repositories
+|   `-- service/                       # Business logic, MLD computation, hazard services
+|
+|-- src/main/resources/
+|   |-- application.properties         # Server port (8081), PostgreSQL datasource config
+|   `-- db/migration/                  # Flyway database migration scripts
+|
+|-- Frontend-stitch-new/               # Design specifications and UI reference captures
+|-- docker-compose.yml                 # PostgreSQL 16 container definition
+|-- pom.xml                            # Maven dependencies and build setup
+`-- run-app.bat                        # Rapid Windows local launch script
+```
+
+---
+
+## Getting Started
 
 ### Prerequisites
 
-- **Java 17+** (JDK)
-- **Node.js 18+** & npm
-- **Docker** & Docker Compose
+Ensure the following tools are installed on your environment:
+- **Java Development Kit (JDK) 17+**
+- **Node.js 18+** and **npm**
+- **Docker** and **Docker Compose**
 - **Git**
 
-### 1. Clone the Repository
+### Installation & Execution
 
+#### Step 1: Clone the Repository
 ```bash
 git clone https://github.com/Kishore-dev-21/deepsync.git
 cd deepsync
 ```
 
-### 2. Start the Database
-
+#### Step 2: Initialize the Database
+Start the dedicated PostgreSQL 16 container:
 ```bash
 docker compose up -d
 ```
+The database will be exposed on port `5433` (configured to avoid standard PostgreSQL port conflicts).
 
-This spins up a PostgreSQL 16 instance on **port 5433** with database `deepsync`.
+#### Step 3: Run the Backend Service
+Execute the Spring Boot service using the included Maven wrapper:
 
-### 3. Start the Backend
-
+**Linux / macOS:**
 ```bash
-# Linux/macOS
 ./mvnw spring-boot:run
-
-# Windows
-mvnw.cmd spring-boot:run
 ```
 
-The Spring Boot API starts on **http://localhost:8081**.
+**Windows (PowerShell or CMD):**
+```bash
+.\mvnw.cmd spring-boot:run
+```
+The REST API will start and bind to `http://localhost:8081`. Default administrative credentials will be automatically initialized (`admin@deepsync.local` / `ChangeMe123!`).
 
-### 4. Start the Frontend
-
+#### Step 4: Run the Frontend Client
+In a separate terminal, start the Vite development server:
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
-
-The React app opens on **http://localhost:5173**.
+Open your browser and navigate to `http://localhost:5173`.
 
 ---
 
-## 📡 REST API Reference
+## Data Foundation & Coverage
 
-| Method | Endpoint | Description |
+DEEPSYNC is specifically calibrated around the Indian Ocean region:
+- **Spatial Bounds**: 60 E to 100 E Longitude | 0 N to 25 N Latitude
+- **Vertical Scope**: Surface (0 m) down to abyssal soundings (-6000 m)
+- **Time Window**: 2022 to 2023 baseline validation epoch with real-time observation feeds
+
+### Integrated Datasets
+
+| Source | Content & Variables | Format & Protocol |
 |:---|:---|:---|
-| `GET` | `/api/health` | Health check |
-| `POST` | `/api/auth/register` | User registration |
-| `POST` | `/api/auth/login` | User authentication (JWT) |
-| `GET` | `/api/ocean/grid` | Fetch ocean grid data with filters |
-| `GET` | `/api/ocean/profile` | Depth profile for lat/lon |
-| `GET` | `/api/ocean/variables` | Available scientific variables |
-| `GET` | `/api/ocean/time-range` | Available time steps |
-| `POST` | `/api/ocean/upload` | Upload NetCDF/CSV dataset (≤200MB) |
-| `GET` | `/api/argo/floats` | List all Argo floats |
-| `GET` | `/api/argo/floats/{id}` | Float details + positions |
-| `GET` | `/api/argo/floats/{id}/profiles` | Depth profiles for a float |
-| `GET` | `/api/hazards` | Active hazard advisories |
-| `POST` | `/api/hazards` | Create hazard advisory (admin) |
-| `GET` | `/api/stats/summary` | Variable statistics & summaries |
-| `GET` | `/api/datasets` | List ingested datasets |
-| `GET` | `/api/admin/parsers` | Available data parsers |
+| **INCOIS-MOM4 / IGORA** | Temperature, Salinity, U/V Current Vectors, SSH | NetCDF-4 / CF-1.8 |
+| **Copernicus Marine (CMEMS)** | Global Multi-Year Reanalysis Physics | NetCDF / OPeNDAP |
+| **Argo Core Floats** | Pressure, Temperature, Salinity, Quality-Controlled Flags | NetCDF / WMO GTS Format |
+| **BGC-Argo** | Dissolved Oxygen, Chlorophyll-a, BBP700, Nitrate, In-situ pH | NetCDF Bio-Argo |
+| **Autonomous Gliders** | High-resolution vertical soundings and dive transects | NetCDF / CSV Trajectory |
+| **CTD Casts** | High-precision conductivity, temperature, and depth profiles | WOCE ASCII / SeaBird Data |
 
 ---
 
-## 🗂️ Project Structure
+## Security & Data Governance
 
-```
-deepsync/
-├── frontend/                          # React + Vite frontend
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── dashboard2d/           # 8 chart types (Profile, T-S, Hovmöller...)
-│   │   │   ├── dashboard3d/           # 3D engine (OceanScene, ControlPanel, DepthSlider...)
-│   │   │   ├── datamanager/           # Upload, parser registry, ingestion logs
-│   │   │   ├── geomap/                # MapCanvas, GlobeCanvas, InstrumentDetail
-│   │   │   ├── home/                  # Navbar
-│   │   │   └── shared/                # Layout, ProtectedRoute
-│   │   ├── views/                     # Page components (Home, Dashboard, GeoMap, AI...)
-│   │   ├── store/                     # Zustand stores (app state, auth)
-│   │   └── utils/                     # Volume renderer utilities
-│   └── package.json
-│
-├── src/main/java/com/bluegen/deepsyncapp/
-│   ├── controller/                    # REST controllers
-│   │   ├── OceanDataController.java   # Core ocean data endpoints
-│   │   ├── ArgoController.java        # Argo float operations
-│   │   ├── HazardAdvisoryController.java
-│   │   ├── AuthController.java        # JWT authentication
-│   │   ├── StatsController.java       # Statistical summaries
-│   │   ├── DatasetController.java     # Dataset management
-│   │   └── AdminParserController.java # Parser administration
-│   ├── entity/                        # JPA entities
-│   │   ├── OceanGridPointEntity.java  # Lat/lon/depth/time grid points
-│   │   ├── ArgoFloatEntity.java       # Argo float metadata
-│   │   ├── FloatPositionEntity.java   # Float trajectory positions
-│   │   ├── ProfileSampleEntity.java   # Depth profile measurements
-│   │   ├── HazardAdvisoryEntity.java  # Coastal hazard alerts
-│   │   ├── UserEntity.java           # User accounts
-│   │   ├── ChatMessageEntity.java     # AI conversation history
-│   │   └── IngestionEntity.java       # Dataset ingestion tracking
-│   ├── ingestion/                     # Data parsers
-│   │   ├── OceanDataParser.java       # Parser interface
-│   │   ├── NetCdfOceanDataParser.java # NetCDF-3/4 parser
-│   │   ├── AsciiOceanDataParser.java  # CSV/text parser
-│   │   └── NetCdfDatasetLoader.java   # Dataset metadata extractor
-│   ├── netcdf/
-│   │   └── NetcdfReaderService.java   # Low-level NetCDF reader
-│   ├── service/                       # Business logic
-│   ├── repository/                    # JPA repositories
-│   ├── model/                         # DTOs & value objects
-│   └── dto/                           # Request/response DTOs
-│
-├── src/main/resources/
-│   ├── application.properties         # Spring Boot config (port 8081)
-│   └── db/migration/                  # Flyway SQL migrations
-│
-├── src/test/                          # Unit & integration tests
-├── docker-compose.yml                 # PostgreSQL 16 container
-├── pom.xml                            # Maven dependencies
-└── Frontend-stitch-new/               # UI design reference & screenshots
-```
+- **Role-Based Access Control**: Differentiated roles for Public Viewers, Research Scientists, and Platform Administrators secured via JSON Web Tokens.
+- **Read-Only AI Safeguards**: The Scientific Query Validation service enforces strict read-only execution on all natural-language generated queries.
+- **Data Provenance**: Every ingested dataset maintains a complete tracking history, including checksum, source institution, ingestion timestamp, and CF compliance scores.
+- **UTC Time Enforcement**: The backend enforces JVM-level UTC time synchronization to eliminate timezone discrepancies in ocean observation timestamps.
 
 ---
 
-## 🌍 Data Coverage
+## Roadmap
 
-| Dataset | Source | Region | Variables |
+| Phase | Milestone | Scope | Status |
 |:---|:---|:---|:---|
-| **INCOIS-MOM4** | INCOIS, MoES | Indian Ocean (60°E–100°E, 0°N–25°N) | Temperature, Salinity, Currents |
-| **Copernicus Marine** | CMEMS (GLOBAL_MULTIYEAR_PHY) | Global / Indian Ocean | Temperature, Salinity, SSH |
-| **Argo Global** | ifremer.fr | Indian Ocean EEZ | T/S profiles, float trajectories |
-| **Glider (v2)** | ifremer.fr | Indian Ocean | Dive profiles, missions |
-
-All data standardized via **CF Conventions (CF-1.8)** with OGC WMS/WCS and OPeNDAP interoperability.
-
----
-
-## 🔐 Security
-
-- **JWT Authentication** with Spring Security
-- **Role-based access control** (admin/user)
-- **Scientific Query Validation** — AI-generated queries checked and kept read-only
-- **Secure service-to-service** communication
-- **CF-compliant validation** with quality checks before data exposure
-- **Environment-variable overrides** for production credentials
+| **Phase 1** | Ingestion & Core Services | NetCDF CF-1.8 ingestion, PostgreSQL data foundation, REST API | Completed |
+| **Phase 2** | 3D Volumetric Visualization | WebGL 3D ocean scene, depth slicers, isosurface rendering, 8 2D charts | Completed |
+| **Phase 3** | In-Situ Geospatial Tracking | GeoMap Leaflet engine, Argo float and glider telemetry tracking | Completed |
+| **Phase 4** | OceanIQ AI Engine | Grounded natural language query agent, MLD calculation, hazard alerts | Completed |
+| **Phase 5** | Sensor Expansion | High-Frequency (HF) Radar surface currents, ADCP acoustic profiling | Planned |
+| **Phase 6** | Ecological Intelligence | Environmental DNA (eDNA) integration, potential fishing zones (PFZ) | Planned |
 
 ---
 
-## 🗺️ Roadmap
+## Contributing
 
-| Phase | Focus | Status |
-|:---|:---|:---|
-| **Phase 1** | Core backend, ingestion pipeline, database schema | ✅ Complete |
-| **Phase 2** | 3D visualization engine, 2D analytics dashboard | ✅ Complete |
-| **Phase 3** | Geo Map, Argo/Glider integration, instrument telemetry | ✅ Complete |
-| **Phase 4** | OceanIQ AI assistant, hazard monitoring | ✅ Complete |
-| **Phase 5** | HF-radar, ADCP, BGC observations, eDNA integration | 🔜 Planned |
-| **Phase 6** | ML-derived products, fisheries & biodiversity modules | 🔜 Planned |
-
----
-
-## 👥 Target Users
-
-| User | Use Case |
-|:---|:---|
-| 🔬 **Researchers** | Multi-dimensional ocean state analysis, model validation |
-| 🌊 **Oceanographers** | Depth-resolved exploration, water mass identification |
-| ⛈️ **Forecasters** | Model-vs-observation comparison, forecast skill assessment |
-| 🏛️ **Decision Makers** | Environmental monitoring, evidence-based policy support |
-| 🎓 **Educators** | Interactive ocean science demonstrations |
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome from oceanographers, data scientists, and developers.
 
 1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+2. Create your feature branch: `git checkout -b feature/NewOceanDiagnostic`
+3. Commit your modifications: `git commit -m 'Add new ocean diagnostic capability'`
+4. Push to your branch: `git push origin feature/NewOceanDiagnostic`
+5. Open a Pull Request for review
 
 ---
 
-## 📄 License
+## Acknowledgments & Credits
 
-This project is developed by **Team BLUEGEN_606** for the **SEVA First Innovation Challenge 2026** (PS 26067, INCOIS — Ministry of Earth Sciences, Government of India).
+- **Challenge**: SEVA First Innovation Challenge 2026
+- **Theme**: Swachh & Sustainable Bharat
+- **Problem Statement**: PS 26067
+- **Nodal Agency**: Indian National Centre for Ocean Information Services (INCOIS), Ministry of Earth Sciences, Government of India
+- **Developed by**: Team BLUEGEN_606
 
 ---
 
 <p align="center">
-  <img src="Frontend-stitch-new/logo.png" alt="DeepSync" width="60"/>
+  <img src="assets/bluegen_606_logo.png" alt="BLUEGEN_606 Logo" width="220"/>
   <br/>
-  <strong>DeepSync by Bluegen</strong>
-  <br/>
-  <em>From raw data to actionable ocean intelligence</em>
-  <br/><br/>
-  <sub>© 2026 DeepSync · Team BLUEGEN_606 · PS 26067 · INCOIS, MoES Govt. of India</sub>
+  <strong>Team BLUEGEN_606</strong><br/>
+  <em>Ocean Data Comes Alive in 3D</em><br/>
+  <sub>SEVA First Innovation Challenge 2026</sub>
 </p>
